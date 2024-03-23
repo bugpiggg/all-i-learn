@@ -7,7 +7,7 @@
 - [Finance](#finance)
 
 ## Programming
-- [interview](/programming/interview/toc.md)
+- [java](/programming/java/toc.md)
 
 ## Finance
 - [loan](/finance/loan/toc.md)
