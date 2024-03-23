@@ -57,7 +57,7 @@
 
 #### 5. Mock
 - 행위를 검증하기 위해, 가짜 객체를 만들고 테스트하는 방법
-
+- 호출에 대한 기대를 명세하고 내용에 따라 동작하도록 프로그래밍 된 객체
 
 #### Test Double 선택시에
 
@@ -65,11 +65,27 @@
 - 다음과 같은 순서대로 테스트의 범위가 넓어지고 생성이 어려워짐
   - Dummy -> Stub -> Fake -> Spy -> Mock
 
+#### 아직 mock과 stub 의 차이를 모르겠다?
+
+- 스택오버플로우 한 유저가 아래와 같이 정리했다.
+  > A stub is a simple fake object. It just makes sure test runs smoothly.  
+  > A mock is a smarter stub. You verify your test passes through it.
 
 
+- 다른 유저는 아래와 같이 정리하기도 했다.
+  > Stub - override methods to return hard-coded values, also referred to as state-based.  
+  Example: Your test class depends on a method Calculate() taking 5 minutes to complete. Rather than wait for 5 minutes you can replace its real implementation with stub that returns hard-coded values; taking only a small fraction of the time.
+
+  > Mock - very similar to Stub but interaction-based rather than state-based. This means you don't expect from Mock to return some value, but to assume that specific order of method calls are made.  
+  Example: You're testing a user registration class. After calling Save, it should call SendConfirmationEmail.
+
+- 구현관점에서 정리하면,
+  - Stub 은 상태 검증을 위해 사용하기 때문에, 하드코딩된 값을 리턴하는 부분만 구현하면 됨
+  - Mock 은 행위 검증을 위해 사용하기 때문에, 특정 함수들의 호출이 기대됨. 그렇기에 재구현이나 부분구현이 아닌 실제 구현을 활용할 수도 있음? 
 
 ## Reference
 
 - https://brunch.co.kr/@tilltue/55
 - https://codinghack.tistory.com/92
 - https://www.crocus.co.kr/1555
+- https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub/3459431#3459431
