@@ -8,6 +8,7 @@
 
 ## Programming
 - [java](/programming/java/toc.md)
+- [test](/programming/test/toc.md)
 
 ## Finance
 - [loan](/finance/loan/toc.md)
